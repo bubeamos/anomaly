@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Industrial Security Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .secondary {
+            background-color: #6c757d;
+        }
+        .secondary:hover {
+            background-color: #5a6268;
+        }
+        .message {
+            color: green;
+            font-weight: bold;
+        }
+        .highlight {
+            font-size: 0.9em;
+            color: #d32f2f;
+            background-color: #ffebee;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 10px 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Industrial Security Services</h1>
+        <p class="highlight">This app should only be accessed between 8 AM to 6 PM UTC+2 and from approved IP locations.</p>
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+        <form action="/log_ip" method="POST">
+            <button type="submit">Login</button>
+        </form>
+        <button class="secondary" onclick="alert('This button does nothing!')">Do Nothing</button>
+    </div>
+</body>
+</html>
