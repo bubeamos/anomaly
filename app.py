@@ -7,12 +7,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', user_ip=request.remote_addr)
+    user_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    return render_template('index.html', user_ip=user_ip)
 
 @app.route('/log_ip', methods=['POST'])
 def log_ip():
     # Get user IP and timestamp
-    user_ip = request.remote_addr
+    user_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
     timestamp = datetime.datetime.utcnow().isoformat()
     
     # Log to stdout with flush
