@@ -6,7 +6,7 @@
 - update app as needed
 - build image `docker build -t anomaly .`
 - Run image locally - `docker run -itd -p 8080:8080 anomaly`
-- Veriy app works by visiting localhost:8080
+- Verify app works by visiting localhost:8080
 
 - Push image to AWS ECR
 ```
